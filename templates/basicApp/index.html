@@ -1,6 +1,17 @@
 <!DOCTYPE html>
-
 {% extends "basicApp/base.html" %}
+{% load basicApp_extras %} <!--loading custom filters file (in basicApp/templatetags/ path) -->
 {% block body_block %}
     <h1>INDEX PAGE </h1>
+    <h2> '{{text}}' is the first key. Cut the 'hello' part.</h2>
+    <h2> {{text|cut:'hello'}} </h2>
+    <hr>
+    <h2> {{numbers}} is the key</h2>
+    <h2>  Adding 20 to {{numbers}}: {{numbers|add:20}} </h2>
+    <hr>
+    <h1> Added my custom  square filter. </h1>
+    <p> (To create your own filter, add a directory 'templatetags' add '__init__.py' and a python file)</p>
+<h3> <a href="https://docs.djangoproject.com/en/2.2/howto/custom-template-tags/"> Check how to create custom filters here.</a></h3>
+    <h2> The square of {{numbers}} is {{numbers|sq}} </h2>
+    <hr>
 {% endblock %}

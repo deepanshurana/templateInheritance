@@ -7,7 +7,8 @@ def homePage(request):
 
 
 def index(request):
-    return render(request, 'basicApp/index.html')
+    d = {'text': 'hello world', 'numbers': 25}
+    return render(request, 'basicApp/index.html', context=d)
 
 
 def other(request):
